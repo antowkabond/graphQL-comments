@@ -1,26 +1,23 @@
 import { Field, ID, InputType, Int, ObjectType } from "@nestjs/graphql";
-import { CommentDto } from "../comment/comment.dto";
 
 @ObjectType()
 export class UserDto {
   @Field(() => ID)
-  readonly id?: number;
+  public id?: number;
 
   @Field()
-  readonly name: string;
+  public name: string;
 
   @Field(() => Int)
-  readonly age: number;
-
-  @Field(() => [CommentDto], {nullable: true})
-  readonly comments?: CommentDto[];
+  public age: number;
 }
 
 @InputType()
 export class UserInput {
   @Field()
-  readonly name: string;
+  public name: string;
 
   @Field(() => Int)
-  readonly age: number;
+  public age: number;
 }
+
